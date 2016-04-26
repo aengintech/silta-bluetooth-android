@@ -36,12 +36,12 @@ dependencies {
 提供控制Bluetooth功能
 #### 開啟 SiltaBluetooth SDK
 ```gradle
-  SiltaBluetooth.getManager().start();
+  SiltaBluetooth.getManager().startScan();
 ```
 
 #### 停止 SiltaBluetooth SDK
 ```gradle
-  SiltaBluetooth.getManager().stop();
+  SiltaBluetooth.getManager().stopScan();
 ```
 
 #### 取得Beacon列表
@@ -72,4 +72,16 @@ dependencies {
 #### 對單一Beacon下指令
 ```gradle
   SiltaBluetooth.getManager().fireCommand(ICommand.Buzzer,Bluetooth);
+```
+
+#### Start SiltaBluetooth transmitter
+
+```gradle
+  SiltaBluetooth.getManager().startTransmitter(String Magjor, String Minor, String MeasurePower);
+```
+
+#### Stop SiltaBluetooth transmitter
+
+```gradle
+  SiltaBluetooth.getManager().stopTransmitter();
 ```
