@@ -53,14 +53,15 @@ dependencies {
 ```gradle
   public class MainActivity extends Activity implements SiltaBluetoothDelegate{
   Handler mHandler; // 初始化在onCreate裡
-  
+  ArrayList<Bluetooth> mBeacon = new ArrayList<Bluetooth>(); // Put Bluetooth into arraylist
       @Override
-      public void onBluetoothDeviceListBeenRenewed(final ArrayList<Bluetooth> bles) {
+      public void onBluetoothDeviceListBeenRenewed(final ArrayList<Bluetooth> arrayList) {
           /** 因為來自非UI線程,所以不能直接更新UI */
           mHandler.post(new Runnable() {
               @Override
               public synchronized void run() {
                   /** 在這更新你的UI */
+                  mBeacon = arrayList;
               }
           });
       }
