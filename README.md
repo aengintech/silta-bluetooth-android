@@ -39,13 +39,13 @@ Provides the functions to control Bluetooth devices.
 
 #### Launch SiltaBluetooth SDK
 ```gradle
-  SiltaBluetooth.getManager().start();
+  SiltaBluetooth.getManager().startScan();
 ```
 
 #### Quit SiltaBluetooth SDK
 
 ```gradle
-  SiltaBluetooth.getManager().stop();
+  SiltaBluetooth.getManager().stopScan();
 ```
 
 #### Get Beacon List
@@ -79,4 +79,16 @@ Provides the functions to control Bluetooth devices.
 #### Give a command to one single Beacon device.
 ```gradle
   SiltaBluetooth.getManager().fireCommand(ICommand.Buzzer,Bluetooth);
+```
+
+#### Start SiltaBluetooth transmitter
+
+```gradle
+  SiltaBluetooth.getManager().startTransmitter(String Magjor, String Minor, String MeasurePower);
+```
+
+#### Stop SiltaBluetooth transmitter
+
+```gradle
+  SiltaBluetooth.getManager().stopTransmitter();
 ```
